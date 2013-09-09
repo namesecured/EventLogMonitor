@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 using Microsoft.Practices.Unity;
 
@@ -33,7 +34,7 @@ namespace Core.Tests.EventLogListenerTests
         private void GivenExpectedEvent()
         {
             var eventsValidator = this.Container.Resolve<IEventValidator>();
-            eventsValidator.Stub(x => x.IsEventExpected(Arg<EventArgs>.Is.Anything)).Repeat.Any().Return(true);
+            eventsValidator.Stub(x => x.IsEventExpected(Arg<EntryWrittenEventArgs>.Is.Anything)).Repeat.Any().Return(true);
         }
 
         private void GivenExpectedPoolManagerBehaviour()

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using System.Diagnostics;
 
 namespace Core
 {
     public interface IEventValidator
     {
-        bool IsEventExpected(EventArgs e);
+        bool IsEventExpected(EntryWrittenEventArgs e);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace Core
 {
@@ -33,7 +34,7 @@ namespace Core
             this.poolManager = poolManager;
         }
 
-        public void OnEntryWritten(object sender, EventArgs e)
+        public void OnEntryWritten(object sender, EntryWrittenEventArgs e)
         {
             if (!this.eventValidator.IsEventExpected(e))
             {
