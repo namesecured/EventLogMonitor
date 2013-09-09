@@ -16,6 +16,7 @@ namespace Core.Tests.EventValidatorTest
         [TestFixtureSetUp]
         public void SetUp()
         {
+            this.EventValidator = new EventValidator();
         }
     }
 }
