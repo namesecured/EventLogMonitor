@@ -60,6 +60,7 @@
     <Compile Include="EventLogListenerTests\When_expected_event_comes.cs" />
     <Compile Include="EventLogListenerTests\Given_health_monitor.cs" />
     <Compile Include="EventLogListenerTests\When_unexpected_event_comes.cs" />
+    <Compile Include="EventValidatorTest\Given_event_validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
