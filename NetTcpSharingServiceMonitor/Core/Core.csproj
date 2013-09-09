@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISettings.cs" />
-    <Compile Include="Settings.cs" />
+    <Compile Include="PoolManager.cs" />
     <Compile Include="EventProvider.cs" />
     <Compile Include="EventValidator.cs" />
     <Compile Include="HealthMonitor.cs" />

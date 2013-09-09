@@ -67,6 +67,7 @@
     <Compile Include="EventValidatorTest\When_known_event_comes_in.cs" />
     <Compile Include="EventValidatorTest\When_unknown_event_comes_in.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsStub.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>

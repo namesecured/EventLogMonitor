@@ -33,7 +33,7 @@ namespace Core.Tests.EventValidatorTest
         private void GivenKnownEvent()
         {
             var entry = MockRepository.GenerateStub<EventLogEntry>();
-            var settings = new Settings();
+            var settings = new SettingsStub();
 
             entry.Stub(x => x.InstanceId).Repeat.Any().Return(settings.EventId);
             entry.Stub(x => x.Source).Repeat.Any().Return(settings.Source);
