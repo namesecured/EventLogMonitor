@@ -46,7 +46,7 @@ namespace Core.Tests.EventLogListenerTests
         private void WhenExpectedEventComes()
         {
             var eventsProvider = this.Container.Resolve<IEventProvider>();
-            eventsProvider.Raise(x => x.OnEntryWritten += null, eventsProvider, EventArgs.Empty);
+            eventsProvider.Raise(x => x.OnEntryWritten += null, eventsProvider, Arg<EntryWrittenEventArgs>.Is.Anything);
         }
 
         private void ThenPollShouldBeRestarted()
