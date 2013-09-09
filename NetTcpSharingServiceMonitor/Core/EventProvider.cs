@@ -9,13 +9,16 @@ namespace Core
 {
     internal class EventProvider : IEventProvider
     {
+        private readonly ISettings settings;
+
         private EventLog eventLog;
 
         public event Action<object, EntryWrittenEventArgs> OnEntryWritten;
 
-        public EventProvider()
+        public EventProvider(ISettings settings)
         {
-            this.eventLog = new EventLog { Log = "System" };
+            this.settings = settings;
+            this.eventLog = new EventLog { Log = this.settings.Log };
             this.eventLog.EnableRaisingEvents = true;
             this.eventLog.EntryWritten += this.EventLogEntryWritten;
         }

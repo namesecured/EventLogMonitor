@@ -7,7 +7,7 @@ namespace Core.Tests
     {
         public SettingsStub()
         {
-            this.AppPoolIds = new List<int> { 1 };
+            this.Log = "System";
             this.EventId = 8;
             this.TaskCategory = "Sharing Service";
             this.Source = "SMSvcHost";
@@ -16,6 +16,8 @@ namespace Core.Tests
         }
 
         public List<int> AppPoolIds { get; set; }
+
+        public string Log { get; set; }
 
         public long EventId { get; set; }
 

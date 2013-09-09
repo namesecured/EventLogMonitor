@@ -6,6 +6,14 @@ namespace Core
 {
     public class Settings : ISettings
     {
+        public string Log
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["Log"];
+            }
+        }
+
         public long EventId
         {
             get
