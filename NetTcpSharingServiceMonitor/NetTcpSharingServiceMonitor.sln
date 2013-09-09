@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetTcpSharingServiceMonitor", "NetTcpSharingServiceMonitor\NetTcpSharingServiceMonitor.csproj", "{1C74A9BB-2FD1-4ACF-A49D-1480F1487A3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests", "Core.Tests\Core.Tests.csproj", "{8E2B80D3-4D9B-4791-A17B-5A891101122C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{3C6C3E00-0FE2-4862-9A0B-C050D9289387}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C74A9BB-2FD1-4ACF-A49D-1480F1487A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C74A9BB-2FD1-4ACF-A49D-1480F1487A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C74A9BB-2FD1-4ACF-A49D-1480F1487A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C74A9BB-2FD1-4ACF-A49D-1480F1487A3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2B80D3-4D9B-4791-A17B-5A891101122C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2B80D3-4D9B-4791-A17B-5A891101122C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2B80D3-4D9B-4791-A17B-5A891101122C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2B80D3-4D9B-4791-A17B-5A891101122C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C6C3E00-0FE2-4862-9A0B-C050D9289387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6C3E00-0FE2-4862-9A0B-C050D9289387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6C3E00-0FE2-4862-9A0B-C050D9289387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6C3E00-0FE2-4862-9A0B-C050D9289387}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
