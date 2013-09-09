@@ -1,20 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace Core
 {
     public interface ISettings
     {
-        List<int> AppPoolIds { get; set; }
+        long EventId { get; }
 
-        long EventId { get; set; }
+        string Source { get; }
 
-        string TaskCategory { get; set; }
+        string Description { get; }
 
-        string Source { get; set; }
-
-        string Description { get; set; }
-
-        EventLogEntryType Level { get; set; }
+        EventLogEntryType Level { get; }
     }
 }
