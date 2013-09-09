@@ -16,10 +16,8 @@ using TestStack.BDDfy;
 namespace Core.Tests.EventValidatorTest
 {
     [TestFixture]
-    public class When_known_event_comes_in : Given_event_validator
+    public class When_unknown_event_comes_in : Given_event_validator
     {
-        private EntryWrittenEventArgs e;
-
         private EntryWrittenEventArgs entryWrittenEventArgs;
 
         private bool result;
@@ -30,12 +28,12 @@ namespace Core.Tests.EventValidatorTest
             this.BDDfy();
         }
 
-        private void GivenKnownEvent()
+        private void GivenUnknownEvent()
         {
             var entry = MockRepository.GenerateStub<EventLogEntry>();
             var settings = new Settings();
 
-            entry.Stub(x => x.InstanceId).Repeat.Any().Return(settings.EventId);
+            entry.Stub(x => x.InstanceId).Repeat.Any().Return(int.MaxValue);
             entry.Stub(x => x.Source).Repeat.Any().Return(settings.Source);
             entry.Stub(x => x.Message).Repeat.Any().Return(settings.Description);
             entry.Stub(x => x.EntryType).Repeat.Any().Return(EventLogEntryType.Error);
@@ -48,9 +46,9 @@ namespace Core.Tests.EventValidatorTest
             this.result = this.EventValidator.IsEventExpected(this.entryWrittenEventArgs);
         }
 
-        private void ThenResultShuldBeTrue()
+        private void ThenResultShouldBeFalse()
         {
-            this.result.Should().BeTrue();
+            this.result.Should().BeFalse();
         }
     }
 }

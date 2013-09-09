@@ -1,10 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
+﻿using Microsoft.Practices.Unity;
 
 using NUnit.Framework;
 
@@ -19,6 +13,7 @@ namespace Core.Tests
         public virtual void FixtureSetUp()
         {
             this.Container = new UnityContainer();
+            this.Container.RegisterType<ISettings, Settings>();
         }
     }
 }

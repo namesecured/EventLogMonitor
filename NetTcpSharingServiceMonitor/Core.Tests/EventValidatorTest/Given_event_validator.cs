@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Practices.Unity;
 
 using NUnit.Framework;
 
@@ -16,7 +12,7 @@ namespace Core.Tests.EventValidatorTest
         [TestFixtureSetUp]
         public void SetUp()
         {
-            this.EventValidator = new EventValidator();
+            this.EventValidator = new EventValidator(this.Container.Resolve<ISettings>());
         }
     }
 }

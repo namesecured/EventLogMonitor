@@ -1,17 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core
 {
     public class EventValidator :IEventValidator
     {
-        public bool IsEventExpected(EntryWrittenEventArgs e)
+        private readonly ISettings settings;
+
+        public EventValidator(ISettings settings)
         {
-            throw new NotImplementedException();
+            this.settings = settings;
+        }
+
+        public bool IsEventExpected(EntryWrittenEventArgs eventArgs)
+        {
+            if (eventArgs == null)
+            {
+                throw new ArgumentNullException("eventArgs");
+            }
+
+            if (eventArgs.Entry.EntryType != this.settings.Level)
+            {
+                return false;
+            }
+
+            if (eventArgs.Entry.InstanceId != this.settings.EventId)
+            {
+                return false;
+            }
+
+            if (!eventArgs.Entry.Source.Contains(this.settings.Source))
+            {
+                return false;
+            }
+
+            if (!eventArgs.Entry.Message.Contains(this.settings.Description))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

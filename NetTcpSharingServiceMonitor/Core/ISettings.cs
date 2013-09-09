@@ -1,4 +1,6 @@
-﻿namespace Core
+﻿using System.Diagnostics;
+
+namespace Core
 {
     public interface ISettings
     {
@@ -9,5 +11,7 @@
         string Source { get; set; }
 
         string Description { get; set; }
+
+        EventLogEntryType Level { get; set; }
     }
 }

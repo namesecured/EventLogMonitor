@@ -4,6 +4,6 @@ namespace Core
 {
     public interface IEventValidator
     {
-        bool IsEventExpected(EntryWrittenEventArgs e);
+        bool IsEventExpected(EntryWrittenEventArgs eventArgs);
     }
 }
