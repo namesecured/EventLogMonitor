@@ -29,12 +29,16 @@ namespace Core
             }
 
             this.eventProvider = eventProvider;
-            this.eventProvider.OnEntryWritten += this.OnEntryWritten;
             this.eventValidator = eventValidator;
             this.poolManager = poolManager;
         }
 
-        public void OnEntryWritten(object sender, EntryWrittenEventArgs e)
+        public void Run()
+        {
+            this.eventProvider.OnEntryWritten += this.OnEntryWritten;
+        }
+
+        private void OnEntryWritten(object sender, EntryWrittenEventArgs e)
         {
             if (!this.eventValidator.IsEventExpected(e))
             {
