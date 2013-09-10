@@ -24,7 +24,7 @@ namespace Core
                 return false;
             }
 
-            if (eventArgs.Entry.InstanceId != this.settings.EventId)
+            if (eventArgs.Entry.EventID != this.settings.EventId)
             {
                 return false;
             }

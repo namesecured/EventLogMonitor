@@ -40,6 +40,18 @@ namespace Core
 
         private void OnEntryWritten(object sender, EntryWrittenEventArgs e)
         {
+            try
+            {
+                this.OnEntryWrittenSafe(e);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+        }
+
+        private void OnEntryWrittenSafe(EntryWrittenEventArgs e)
+        {
             if (!this.eventValidator.IsEventExpected(e))
             {
                 return;

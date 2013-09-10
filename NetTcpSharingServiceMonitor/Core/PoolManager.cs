@@ -19,7 +19,7 @@ namespace Core
 
         private void ResetInternal()
         {
-            var path = Path.Combine(Environment.SystemDirectory, "System32", "iisreset.exe");
+            var path = Path.Combine(Environment.SystemDirectory, "iisreset.exe");
 
             System.Diagnostics.Process.Start(path);
         }
