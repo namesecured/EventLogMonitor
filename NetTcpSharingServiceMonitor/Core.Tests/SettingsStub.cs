@@ -13,7 +13,7 @@ namespace Core.Tests
 
         public string Log { get; set; }
 
-        public long EventId { get; set; }
+        public int EventId { get; set; }
 
         public string TaskCategory { get; set; }
 

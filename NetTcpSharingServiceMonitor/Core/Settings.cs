@@ -18,7 +18,7 @@ namespace Core
 
         public string Log { get; private set; }
 
-        public long EventId { get; private set; }
+        public int EventId { get; private set; }
 
         public string Source { get; private set; }
 
@@ -44,7 +44,7 @@ namespace Core
         private void InitializeEventId()
         {
             var value = this.GetAppSettingsValue(EventIdAppKey);
-            this.EventId = long.Parse(value);
+            this.EventId = int.Parse(value);
         }
 
         private void InitializeSource()
