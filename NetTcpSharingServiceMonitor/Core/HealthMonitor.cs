@@ -54,9 +54,11 @@ namespace Core
         {
             if (!this.eventValidator.IsEventExpected(e))
             {
+                Console.WriteLine("-\nReceived unexpected event...\nEventId:\t{0}\nSource:\t{1}\n...skipping it.", e.Entry.EventID, e.Entry.Source);
                 return;
             }
 
+            Console.WriteLine("-\nAn expected event has been received...\nEventId:\t{0}\nSource:\t{1}\n...restarting IIS.", e.Entry.EventID, e.Entry.Source);
             this.poolManager.Reset();
         }
     }
