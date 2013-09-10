@@ -13,7 +13,7 @@ namespace Core.Tests
         public virtual void FixtureSetUp()
         {
             this.Container = new UnityContainer();
-            this.Container.RegisterType<ISettings, SettingsStub>();
+            this.Container.RegisterType<ISettings, SettingsStub>(new InjectionMethod("Initialize"));
         }
     }
 }

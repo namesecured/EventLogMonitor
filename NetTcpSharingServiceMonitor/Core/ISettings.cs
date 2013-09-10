@@ -13,5 +13,7 @@ namespace Core
         string Description { get; }
 
         EventLogEntryType Level { get; }
+
+        void Initialize();
     }
 }

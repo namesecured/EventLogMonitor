@@ -18,8 +18,8 @@ namespace Core
             {
                 throw new ArgumentNullException("eventArgs");
             }
-
-            if (eventArgs.Entry.EntryType != this.settings.Level)
+            
+            if (!eventArgs.Entry.EntryType.Equals(this.settings.Level))
             {
                 return false;
             }

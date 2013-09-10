@@ -7,12 +7,6 @@ namespace Core.Tests
     {
         public SettingsStub()
         {
-            this.Log = "System";
-            this.EventId = 8;
-            this.TaskCategory = "Sharing Service";
-            this.Source = "SMSvcHost";
-            this.Description = "An error occurred while dispatching a duplicated socket: this handle is now leaked in the process.";
-            this.Level = EventLogEntryType.Error;
         }
 
         public List<int> AppPoolIds { get; set; }
@@ -28,5 +22,15 @@ namespace Core.Tests
         public string Description { get; set; }
 
         public EventLogEntryType Level { get; set; }
+
+        public void Initialize()
+        {
+            this.Log = "System";
+            this.EventId = 8;
+            this.TaskCategory = "Sharing Service";
+            this.Source = "SMSvcHost";
+            this.Description = "An error occurred while dispatching a duplicated socket: this handle is now leaked in the process.";
+            this.Level = EventLogEntryType.Error;
+        }
     }
 }

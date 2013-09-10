@@ -6,44 +6,81 @@ namespace Core
 {
     public class Settings : ISettings
     {
-        public string Log
+        private const string LogAppKey = "Log";
+
+        private const string EventIdAppKey = "EventId";
+
+        private const string SourceAppKey = "Source";
+
+        private const string DescriptionAppKey = "Description";
+
+        private const string LevelAppKey = "Level";
+
+        public string Log { get; private set; }
+
+        public long EventId { get; private set; }
+
+        public string Source { get; private set; }
+
+        public string Description { get; private set; }
+
+        public EventLogEntryType Level { get; private set; }
+
+        public void Initialize()
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["Log"];
-            }
+            this.InitializeLog();
+            this.InitializeEventId();
+            this.InitializeSource();
+            this.InitializeDescription();
+            this.InitializeLevel();
         }
 
-        public long EventId
+        private void InitializeLog()
         {
-            get
-            {
-                return long.Parse(ConfigurationManager.AppSettings["EventId"]);
-            }
+            var value = this.GetAppSettingsValue(LogAppKey);
+            this.Log = value;
         }
 
-        public string Source
+        private void InitializeEventId()
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["Source"];
-            }
+            var value = this.GetAppSettingsValue(EventIdAppKey);
+            this.EventId = long.Parse(value);
         }
 
-        public string Description
+        private void InitializeSource()
         {
-            get
-            {
-                return ConfigurationManager.AppSettings["Description"];
-            }
+            var value = this.GetAppSettingsValue(SourceAppKey);
+            this.Source = value;
         }
 
-        public EventLogEntryType Level
+        private void InitializeDescription()
         {
-            get
+            var value = this.GetAppSettingsValue(DescriptionAppKey);
+            this.Description = value;
+        }
+
+        private void InitializeLevel()
+        {
+            var value = this.GetAppSettingsValue(LevelAppKey);
+            this.Level = (EventLogEntryType)Enum.Parse(typeof(EventLogEntryType), value);
+        }
+
+        private string GetAppSettingsValue(string key)
+        {
+            var value = ConfigurationManager.AppSettings[key];
+            this.ValidateAppSettingsValue(key, value);
+            return value;
+        }
+
+        private void ValidateAppSettingsValue(string key, string value)
+        {
+            if (!string.IsNullOrWhiteSpace(value))
             {
-                return (EventLogEntryType)Enum.Parse(typeof(EventLogEntryType), ConfigurationManager.AppSettings["Level"]);
+                return;
             }
+
+            var message = string.Format("{0} isn't set.", key);
+            throw new ConfigurationErrorsException(message);
         }
     }
 }
