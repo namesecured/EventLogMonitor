@@ -6,8 +6,6 @@ namespace Core
     {
         string Log { get; }
 
-        int EventId { get; }
-
         string Source { get; }
 
         string Description { get; }

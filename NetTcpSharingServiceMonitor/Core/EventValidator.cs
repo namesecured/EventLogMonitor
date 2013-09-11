@@ -24,11 +24,6 @@ namespace Core
                 return false;
             }
 
-            if (eventArgs.Entry.EventID != this.settings.EventId)
-            {
-                return false;
-            }
-
             if (!eventArgs.Entry.Source.Contains(this.settings.Source))
             {
                 return false;

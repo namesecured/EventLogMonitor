@@ -13,8 +13,6 @@ namespace Core.Tests
 
         public string Log { get; set; }
 
-        public int EventId { get; set; }
-
         public string TaskCategory { get; set; }
 
         public string Source { get; set; }
@@ -26,7 +24,6 @@ namespace Core.Tests
         public void Initialize()
         {
             this.Log = "System";
-            this.EventId = 8;
             this.TaskCategory = "Sharing Service";
             this.Source = "SMSvcHost";
             this.Description = "An error occurred while dispatching a duplicated socket: this handle is now leaked in the process.";

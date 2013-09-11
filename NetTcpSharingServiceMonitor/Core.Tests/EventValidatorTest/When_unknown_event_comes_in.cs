@@ -29,11 +29,10 @@ namespace Core.Tests.EventValidatorTest
         {
             var entry = MockRepository.GenerateStub<EventLogEntry>();
             var settings = this.Container.Resolve<ISettings>();
-
-            entry.Stub(x => x.EventID).Repeat.Any().Return(int.MaxValue);
+            
             entry.Stub(x => x.Source).Repeat.Any().Return(settings.Source);
             entry.Stub(x => x.Message).Repeat.Any().Return(settings.Description);
-            entry.Stub(x => x.EntryType).Repeat.Any().Return(settings.Level);
+            entry.Stub(x => x.EntryType).Repeat.Any().Return(EventLogEntryType.Information);
 
             this.entryWrittenEventArgs = new EntryWrittenEventArgs(entry);
         }

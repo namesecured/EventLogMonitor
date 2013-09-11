@@ -7,9 +7,7 @@ namespace Core
     public class Settings : ISettings
     {
         private const string LogAppKey = "Log";
-
-        private const string EventIdAppKey = "EventId";
-
+        
         private const string SourceAppKey = "Source";
 
         private const string DescriptionAppKey = "Description";
@@ -17,8 +15,6 @@ namespace Core
         private const string LevelAppKey = "Level";
 
         public string Log { get; private set; }
-
-        public int EventId { get; private set; }
 
         public string Source { get; private set; }
 
@@ -29,7 +25,6 @@ namespace Core
         public void Initialize()
         {
             this.InitializeLog();
-            this.InitializeEventId();
             this.InitializeSource();
             this.InitializeDescription();
             this.InitializeLevel();
@@ -39,12 +34,6 @@ namespace Core
         {
             var value = this.GetAppSettingsValue(LogAppKey);
             this.Log = value;
-        }
-
-        private void InitializeEventId()
-        {
-            var value = this.GetAppSettingsValue(EventIdAppKey);
-            this.EventId = int.Parse(value);
         }
 
         private void InitializeSource()
